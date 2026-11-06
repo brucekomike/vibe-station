@@ -1,8 +1,10 @@
 # the port list of the legacy intel station — one port per line, `#` starts a
 # comment. consumed by bootstrap-ports.sh, so keep it to the short names.
 
-# vcs and files
+# vcs and files — gh/glab completions are wired by shell-completions.sh
 git
+gh
+glab
 rsync
 watch
 tmux
@@ -17,8 +19,9 @@ aria2
 unzip
 p7zip
 
-# interpreters
+# interpreters and shell plumbing
 bash
+bash-completion
 zsh
 python312
 nodejs22

@@ -19,6 +19,7 @@ from those files with `{literalinclude}`, so the page and the script cannot drif
 | base | macports | 2.12.7 | upstream pkg | [base system](10-base.md) |
 | ports | git, rsync, tmux, … | `port installed` | macports | [port list](20-ports.md) |
 | ports | python312, nodejs22 | `port installed` | macports | [port list](20-ports.md) |
+| ports | gh, glab + zsh/bash completions | `port installed` | macports | [git clis](40-git-cli.md) |
 | docs | sphinx + furo | pip into `~/.venv` | macports python | [docs build chain](30-docs-build.md) |
 
 ## re-reading the whole table
@@ -41,4 +42,5 @@ and a hand-copied table would be wrong by Friday.
 10-base
 20-ports
 30-docs-build
+40-git-cli
 ```

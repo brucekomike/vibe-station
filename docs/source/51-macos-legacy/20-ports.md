@@ -55,7 +55,8 @@ port outdated
 ````
 
 re-runnable by design: `port install` skips anything already current, so the script doubles as
-the weekly update pass.
+the weekly update pass. once the list is in, the zsh/bash completions for `gh` and `glab` get
+wired separately — see [git clis](40-git-cli.md).
 
 ## reading it back
 
