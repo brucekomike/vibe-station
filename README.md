@@ -3,12 +3,16 @@
 the tool chains this station runs on — what is installed, where it lives, how it got there
 and how to prove it still works.
 
-one section per platform. currently documented: **ubuntu**.
+one section per platform. currently documented: **ubuntu** and the intel
+**macos 15 / macports** legacy station.
 <!-- end elevator-pitch -->
 
 ## layout
 
 - `docs/source/00-ubuntu/` — the ubuntu tool chain, one page per layer
+- `docs/source/51-macos-legacy/` — the macports tool chain, one page per layer
+- `src/macos-legacy/` — the setup scripts the macos pages include with `{literalinclude}`;
+  edit scripts here, never inside the markdown
 - `docs/source/conf.py` — sphinx configuration, edit inside the `## change required` blocks
 - `bin/` — build, live-reload and packaging helpers inherited from the template
 - `.github/workflows/build.yml` — builds and publishes to github pages on push to `main`

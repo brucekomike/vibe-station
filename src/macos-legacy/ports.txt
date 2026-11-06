@@ -1,0 +1,35 @@
+# the port list of the legacy intel station — one port per line, `#` starts a
+# comment. consumed by bootstrap-ports.sh, so keep it to the short names.
+
+# vcs and files
+git
+rsync
+watch
+tmux
+tree
+htop
+
+# network and archives
+curl
+wget
+gnupg2
+aria2
+unzip
+p7zip
+
+# interpreters
+bash
+zsh
+python312
+nodejs22
+
+# build chain — apple clang comes with the command line tools, llvm is for
+# the rest
+cmake
+ninja
+llvm-19
+libomp
+
+# python pieces of the docs build chain
+py312-pip
+py312-virtualenv

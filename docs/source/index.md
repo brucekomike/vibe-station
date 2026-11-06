@@ -12,4 +12,5 @@ hide-toc: true
 :hidden:
 :maxdepth: 2
 00-ubuntu/index
+51-macos-legacy/index
 ```
