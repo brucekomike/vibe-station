@@ -11,10 +11,12 @@ test -x /opt/local/bin/port || {
 
 sudo port -v selfupdate
 
-# global variant defaults before the first build, so everything takes them
-sudo install -P -m 0644 variants.conf /opt/local/etc/macports/variants.conf
+# global variant defaults before the first build, so everything takes them.
+# no -P: bsd install on macOS does not have it, and the target is a plain file
+sudo install -m 0644 variants.conf /opt/local/etc/macports/variants.conf
 
 sudo port -v install $(sed -e 's/#.*//' -e '/^[[:space:]]*$/d' ports.txt | tr '\n' ' ')
 
-# proof: nothing in the list may be missing or outdated
-port installed outdated
+# proof: a failed install already aborts the script, so all that is left to
+# check is that nothing in the tree is outdated
+port outdated

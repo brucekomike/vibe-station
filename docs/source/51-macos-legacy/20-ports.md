@@ -21,7 +21,7 @@ the whole list installs in one line from the repo root, comments and blank lines
 sudo port -v install $(grep -vE '^[[:space:]]*(#|$)' src/macos-legacy/ports.txt)
 ```
 
-this skips `selfupdate` and the variants step, so use `bootstrap-ports.sh` (below) for a
+this skips `selfupdate` and the variants step, so run the full bootstrap sequence (below) for a
 first-time setup and this one-liner for a quick top-up.
 
 ## global variants
@@ -38,8 +38,17 @@ installed with the wrong one and `port installed <name>, variants` is how you fi
 
 ## bootstrap
 
-`src/macos-legacy/bootstrap-ports.sh` is the one command that takes a freshly installed macports
-base to this station's state:
+the whole sequence, copy-paste ready from the repo root — paste it straight into a terminal, no
+script file needed:
+
+```bash
+sudo port -v selfupdate
+sudo install -m 0644 src/macos-legacy/variants.conf /opt/local/etc/macports/variants.conf
+sudo port -v install $(grep -vE '^[[:space:]]*(#|$)' src/macos-legacy/ports.txt)
+port outdated
+```
+
+`src/macos-legacy/bootstrap-ports.sh` wraps the same commands for one-shot execution:
 
 ````{literalinclude} ../../../src/macos-legacy/bootstrap-ports.sh
 :language: bash
