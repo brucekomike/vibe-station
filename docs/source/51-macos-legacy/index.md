@@ -1,8 +1,9 @@
-# macos legacy — intel, macos 15, macports
+# macos legacy — intel, macos 14 and 15, macports
 
-one machine: an intel mac held at **macOS 15 sequoia**, the last release that boots intel
-hardware. sequoia is the ceiling for this box, which is why the section is named *legacy* — the
-chain is about keeping an aging station useful, not about tracking the newest macOS.
+one machine: an intel mac held at **macOS 14 sonoma** or **macOS 15 sequoia**, sequoia being the
+last release that boots intel hardware. 14 and 15 are the ceiling for this box, which is why the
+section is named *legacy* — the chain is about keeping an aging station useful, not about tracking
+the newest macOS.
 
 everything third-party is installed through **macports**, one prefix (`/opt/local`), one port
 tree, no homebrew, no vendor installers except the macports pkg itself. the scripts that do the
@@ -13,8 +14,8 @@ from those files with `{literalinclude}`, so the page and the script cannot drif
 
 | layer | tool | version | installed from | page |
 | --- | --- | --- | --- | --- |
-| base | macos | 15.x sequoia | software update | [base system](10-base.md) |
-| base | xcode command line tools | 16.x | `xcode-select --install` | [base system](10-base.md) |
+| base | macos | 14.x sonoma / 15.x sequoia | software update | [base system](10-base.md) |
+| base | xcode command line tools | 15.x / 16.x | `xcode-select --install` | [base system](10-base.md) |
 | base | macports | 2.12.7 | upstream pkg | [base system](10-base.md) |
 | ports | git, rsync, tmux, … | `port installed` | macports | [port list](20-ports.md) |
 | ports | python312, nodejs22 | `port installed` | macports | [port list](20-ports.md) |

@@ -15,6 +15,15 @@ setup are the same file.
 add a port by adding a line here and re-running the bootstrap — not by installing ad hoc on the
 machine and hoping the page gets updated.
 
+the whole list installs in one line from the repo root, comments and blank lines stripped:
+
+```bash
+sudo port -v install $(grep -vE '^[[:space:]]*(#|$)' src/macos-legacy/ports.txt)
+```
+
+this skips `selfupdate` and the variants step, so use `bootstrap-ports.sh` (below) for a
+first-time setup and this one-liner for a quick top-up.
+
 ## global variants
 
 `src/macos-legacy/variants.conf` is what gets installed to

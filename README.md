@@ -4,7 +4,7 @@ the tool chains this station runs on — what is installed, where it lives, how 
 and how to prove it still works.
 
 one section per platform. currently documented: **ubuntu** and the intel
-**macos 15 / macports** legacy station.
+**macos 14 and 15 / macports** legacy station.
 <!-- end elevator-pitch -->
 
 ## layout

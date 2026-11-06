@@ -1,19 +1,24 @@
 #!/bin/bash
-# install macports base on the legacy station: intel hardware, macOS 15 sequoia.
-# run before bootstrap-ports.sh.
+# install macports base on the legacy station: intel hardware, macOS 14 sonoma
+# or 15 sequoia. run before bootstrap-ports.sh.
 set -euo pipefail
 
 macports_version=2.12.7
 release_base=https://github.com/macports/macports-base/releases/download
-pkg=MacPorts-${macports_version}-15-Sequoia.pkg
-chk=MacPorts-${macports_version}.chk.txt
 
 # sequoia is the last release that runs on intel — refuse to install the pkg
 # anywhere else
-sw_vers -productVersion | grep -q '^15\.' || {
-  echo "not macOS 15 — pick the pkg for this release at macports.org/install.php" >&2
-  exit 1
-}
+os_major=$(sw_vers -productVersion | cut -d. -f1)
+case ${os_major} in
+  14) codename=Sonoma ;;
+  15) codename=Sequoia ;;
+  *)
+    echo "not macOS 14 or 15 — pick the pkg for this release at macports.org/install.php" >&2
+    exit 1
+    ;;
+esac
+pkg=MacPorts-${macports_version}-${os_major}-${codename}.pkg
+chk=MacPorts-${macports_version}.chk.txt
 
 # ports that have no prebuilt binary fall back to the system toolchain, so the
 # command line tools must be in place first
