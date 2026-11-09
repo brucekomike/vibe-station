@@ -14,3 +14,10 @@ hide-toc: true
 00-ubuntu/index
 51-macos-legacy/index
 ```
+
+```{toctree}
+:caption: shared
+:hidden:
+:maxdepth: 2
+20-common/index
+```

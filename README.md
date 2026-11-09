@@ -3,13 +3,14 @@
 the tool chains this station runs on — what is installed, where it lives, how it got there
 and how to prove it still works.
 
-one section per platform. currently documented: **ubuntu** and the intel
-**macos 14 and 15 / macports** legacy station.
+one section per platform — **ubuntu** and the intel **macos 14 and 15 / macports** legacy
+station — plus a **common** section for tool knowledge that holds on every machine.
 <!-- end elevator-pitch -->
 
 ## layout
 
 - `docs/source/00-ubuntu/` — the ubuntu tool chain, one page per layer
+- `docs/source/20-common/` — cross-platform tool notes (repo access: gh, glab)
 - `docs/source/51-macos-legacy/` — the macports tool chain, one page per layer
 - `src/macos-legacy/` — the setup scripts the macos pages include with `{literalinclude}`;
   edit scripts here, never inside the markdown

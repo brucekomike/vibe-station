@@ -64,10 +64,10 @@ proof is a keypress: `gh repo <TAB>` should offer subcommands in both zsh and
 
 ## authentication
 
-the same commands as on ubuntu — `gh auth login`, `glab auth login --hostname …` — see
-[ubuntu git clis](../00-ubuntu/40-git-cli.md) for the host-selection gotchas, which are
-tool-side and identical here. gh keeps its token in the macOS keyring; glab writes
-`~/.config/glab-cli/config.yml` and refuses mode looser than `600`:
+logins, credential helpers, host flags, wrappers, aliases — cross-platform and documented
+once in [repo access](../20-common/10-repo-access.md). the macos deltas: gh's token lives in
+the keychain, glab's helper lines point at `/opt/local/bin/gh` and `/opt/local/bin/glab`, and
+the config-file mode check is BSD `stat`:
 
 ```bash
 stat -f '%Sp %N' ~/.config/glab-cli/config.yml
